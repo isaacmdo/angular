@@ -41,21 +41,23 @@
   </li>
 </ul>
 
+<app-list-people></app-list-people>
+
 <ul class="list-group mx-auto my-5 col-3">
   <li
     class="list-group-item"
-    *ngFor="let pessoa of pessoas"
+    *ngFor="let pessoa of pessoasTest"
     >
-    O nome da pessoa é {{pessoa.nome}} {{pessoa.sobrenome}}
+    O nome da pessoa é {{pessoa.firstName}} {{pessoa.lastName}}, e ela tem {{pessoa.age}} anos.
   </li>
 </ul>
 
 
 <!-- *ngFor por baixo dos panos -->
 <ul class="list-group mx-auto my-5 col-3">
-  <ng-template ngFor let-pessoa [ngForOf]="pessoas">
+  <ng-template ngFor let-pessoa [ngForOf]="pessoasTest">
   <li class="list-group-item">
-    O nome da pessoa é {{pessoa.nome}} {{pessoa.sobrenome}}
+    O nome da pessoa é {{pessoa.firstName}} {{pessoa.lastName}}, e ela tem {{pessoa.age}} anos.
   </li>
 </ng-template>
 </ul>
@@ -74,4 +76,14 @@
     [(ngModel)]="text"
   >
   <h4>Saida: {{text}}</h4>
+</div>
+
+
+<div class="container my-5">
+  <div class="row d-flex align-items-center justify-content-end">
+    <h2 class="text-center">LISTAGEM DE PERSONAGENS RICK AND MORTY</h2>
+    <div class="col-12">
+      <app-list-api></app-list-api>
+    </div>
+  </div>
 </div>
