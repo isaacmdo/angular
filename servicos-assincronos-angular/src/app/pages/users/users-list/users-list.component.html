@@ -22,10 +22,10 @@
           <td>{{user.sobrenome}}</td>
           <td>{{user.profissao}}</td>
           <td>
-            <button class="btn btn-primary">Editar</button>
+            <button class="btn btn-primary" [routerLink]="['/form', user.id]" routerLinkActive="router-link-active">Editar</button>
           </td>
           <td>
-            <button class="btn btn-danger">Excluir</button>
+            <button class="btn btn-danger" (click)="deleteUser(user.id)">Excluir</button>
           </td>
         </tr>
       </tbody>
